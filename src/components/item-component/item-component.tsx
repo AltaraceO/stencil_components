@@ -15,8 +15,6 @@ export class ItemComponent {
   @Prop() image: string;
 
   render() {
-    console.log('author', this.author);
-
     return (
       <div class="card">
         <img src={this.image} alt="preview" />

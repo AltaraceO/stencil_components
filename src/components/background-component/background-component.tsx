@@ -16,13 +16,6 @@ export class BackgroundComponent {
   @Prop() urls: any;
   @State() theList: Post[];
 
-  componentWillUpdate() {
-    console.log('will update', this.urls);
-  }
-
-  componentWillLoad() {
-    console.log('will load', this.urls);
-  }
   async componentWillRender() {
     console.log('will render', this.urls);
 
