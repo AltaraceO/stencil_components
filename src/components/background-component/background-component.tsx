@@ -39,7 +39,7 @@ export class BackgroundComponent {
       <div class="main-window">
         {this.theList.map((el: Post) => {
           console.log();
-          //the UPS had to be changed to string because the numbers were jumping around when moved in with props
+          //*the UPS had to be changed to string because the numbers were jumping around when moved in with props
           return <item-component postTitle={el.text} image={el.image.toString()} ups={el.upvotes.toString()} author={el.author}></item-component>;
         })}
       </div>
