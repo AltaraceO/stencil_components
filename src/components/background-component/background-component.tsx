@@ -1,4 +1,4 @@
-import { Component, Host, h, State } from '@stencil/core';
+import { Component, h, State, Prop } from '@stencil/core';
 
 interface Post {
   author: string;
@@ -13,10 +13,20 @@ interface Post {
   shadow: true,
 })
 export class BackgroundComponent {
+  @Prop() urls: any;
   @State() theList: Post[];
 
+  componentWillUpdate() {
+    console.log('will update', this.urls);
+  }
+
+  componentWillLoad() {
+    console.log('will load', this.urls);
+  }
   async componentWillRender() {
-    let reddit = await fetch('https://www.reddit.com/r/Images.json?raw_json=1', {
+    console.log('will render', this.urls);
+
+    let reddit = await fetch(this.urls, {
       method: 'GET',
     });
     let data = await reddit.json();
@@ -30,18 +40,16 @@ export class BackgroundComponent {
       };
     });
     this.theList = [...newObjs];
-    console.log('thelist', this.theList);
   }
   render() {
     return (
-      <Host>
-        Hi Hi
+      <div class="main-window">
         {this.theList.map((el: Post) => {
           console.log();
           //the UPS had to be changed to string because the numbers were jumping around when moved in with props
           return <item-component postTitle={el.text} image={el.image.toString()} ups={el.upvotes.toString()} author={el.author}></item-component>;
         })}
-      </Host>
+      </div>
     );
   }
 }

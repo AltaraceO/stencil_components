@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface BackgroundComponent {
+        "urls": any;
     }
     interface ItemComponent {
         "author": string;
@@ -35,6 +36,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface BackgroundComponent {
+        "urls"?: any;
     }
     interface ItemComponent {
         "author"?: string;

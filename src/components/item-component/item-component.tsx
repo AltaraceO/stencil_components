@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'item-component',
@@ -15,6 +15,8 @@ export class ItemComponent {
   @Prop() image: string;
 
   render() {
+    console.log('author', this.author);
+
     return (
       <div class="card">
         <img src={this.image} alt="preview" />
