@@ -10,9 +10,9 @@ export namespace Components {
     }
     interface ItemComponent {
         "author": string;
-        "image": URL;
-        "title": string;
-        "ups": number;
+        "image": string;
+        "postTitle": string;
+        "ups": string;
     }
 }
 declare global {
@@ -38,9 +38,9 @@ declare namespace LocalJSX {
     }
     interface ItemComponent {
         "author"?: string;
-        "image"?: URL;
-        "title"?: string;
-        "ups"?: number;
+        "image"?: string;
+        "postTitle"?: string;
+        "ups"?: string;
     }
     interface IntrinsicElements {
         "background-component": BackgroundComponent;

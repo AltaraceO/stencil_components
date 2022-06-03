@@ -8,17 +8,30 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class ItemComponent {
   @Prop() author: string;
 
-  @Prop() title: string;
+  @Prop() postTitle: string;
 
-  @Prop() ups: number;
+  @Prop() ups: string;
 
-  @Prop() image: URL;
+  @Prop() image: string;
 
   render() {
     return (
-      <Host>
-        <div>{this.author}</div>
-      </Host>
+      <div class="card">
+        <img src={this.image} alt="preview" />
+        <div class="subtitle">
+          <div>
+            <span>Post By:</span>
+            <div class="author">{this.author}</div>
+          </div>
+          <div>
+            <span>UpVotes:</span>
+            <div class="ups">{this.ups}</div>
+          </div>
+        </div>
+        <div class="title">
+          <h3>{this.postTitle}</h3>
+        </div>
+      </div>
     );
   }
 }

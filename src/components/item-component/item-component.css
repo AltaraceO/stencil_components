@@ -1,3 +1,42 @@
 :host {
   display: block;
 }
+img {
+  width: 100%;
+}
+span {
+  font-size: small;
+  color: grey;
+}
+
+.ups {
+  background: lightblue;
+  padding: 2px 4px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.card {
+  width: 250px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.subtitle {
+  display: flex;
+  margin: 0 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.author {
+  color: black;
+}
+
+.title {
+  border-top: 1px solid gainsboro;
+  padding: 0rem 1rem;
+  color: rgb(59, 57, 57);
+}
