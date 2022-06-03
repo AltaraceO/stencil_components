@@ -36,7 +36,11 @@ export class BackgroundComponent {
     return (
       <Host>
         Hi Hi
-        <slot></slot>
+        {this.theList.map((el: Post) => {
+          console.log();
+
+          return <item-component author={el.author}></item-component>;
+        })}
       </Host>
     );
   }
