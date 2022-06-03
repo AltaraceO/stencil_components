@@ -37,6 +37,7 @@ export class BackgroundComponent {
   render() {
     return (
       <div class="main-window">
+        The List
         {this.theList.map((el: Post) => {
           console.log();
           //the UPS had to be changed to string because the numbers were jumping around when moved in with props
